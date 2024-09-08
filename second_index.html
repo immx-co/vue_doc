@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="components-rendering">
+        <todo-item></todo-item>
+        <li>Это вторая задача</li>
+    </div>
+
+    <script>
+        const TodoItem = {
+            props: ['todo'],
+            template: `<li>{{todo.text}}</li>`
+        }
+
+        const app = Vue.createApp({
+            components: {
+                TodoItem
+            }
+        })
+
+        app.mount("#components-rendering")
+    </script>
+</body>
+</html>
